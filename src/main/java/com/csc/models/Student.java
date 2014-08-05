@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "student")
+//@XmlRootElement(name = "student")
 public class Student {
 
 	private int id;
@@ -30,12 +30,12 @@ public class Student {
 		return contacts;
 	}
 
-	@XmlElement(name = "contactInfo")
+	//@XmlElement(name = "contactInfo")
 	public void setContacts(Set<ContactInfo> contacts) {
 		this.contacts = contacts;
 	}
 
-	@XmlElement
+	//@XmlElement
 	public void setFirstName(String fname) {
 		this.firstName = fname;
 	}
@@ -44,7 +44,7 @@ public class Student {
 		return this.firstName;
 	}
 
-	@XmlElement
+	//@XmlElement
 	public void setLastName(String lname) {
 		this.lastName = lname;
 	}
@@ -53,7 +53,7 @@ public class Student {
 		return this.lastName;
 	}
 
-	@XmlAttribute
+	//@XmlAttribute
 	public void setId(int id) {
 		this.id = id;
 	}

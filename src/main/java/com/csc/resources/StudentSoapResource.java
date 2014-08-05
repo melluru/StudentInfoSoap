@@ -34,12 +34,12 @@ public class StudentSoapResource{
 	}
 
 	@WebMethod(operationName="postStudent")
-	public String postStudents(Student student) {
+	public Student postStudents(Student student) {
 		log.info("Entering student --------------------");
 
 		studentBo.insert(student);
 
-		return  "HelloWorldStudents";
+		return  student;
 	}
 	
 	/*	@WebMethod(operationName="postStudents")
@@ -52,7 +52,7 @@ public class StudentSoapResource{
 		studentBo.insertMultiple(students);
 
 		return  "HelloWorldStudents";
-	}
+	} */
 
 	@WebMethod(operationName="getStudent")
 	public Student getMsg(Integer msg) {
@@ -61,7 +61,7 @@ public class StudentSoapResource{
 		//Student student2 = studentBo.findByStudentId(msg);
 
 		return studentBo.findByStudentId(msg);
-	}*/
+	}
 	
 	@WebMethod(operationName="getHelloMsg")
 	public String getHelloMsg() {

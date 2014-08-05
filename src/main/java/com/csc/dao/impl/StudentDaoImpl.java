@@ -15,6 +15,8 @@ public class StudentDaoImpl extends HibernateDaoSupport implements StudentDAO {
 
 	public void insert(Student student) {
 		// getHibernateTemplate().update(student);
+		System.out.println(student.getFirstName());
+		System.out.println(student.getContacts());
 		getHibernateTemplate().save(student);
 	}
 

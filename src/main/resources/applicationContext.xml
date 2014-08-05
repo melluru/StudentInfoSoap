@@ -9,6 +9,10 @@ http://jax-ws.java.net/spring/core.xsd
 http://jax-ws.dev.java.net/spring/servlet
       http://jax-ws.java.net/spring/servlet.xsd">
 
+	<!-- Database Configuration -->
+	<import resource="spring/database/DataSource.xml" />
+	<import resource="spring/database/Hibernate.xml" />
+
 	<wss:binding url="/studentInfo">
 		<wss:service>
 			<ws:service bean="#stdSoapRsr" />
@@ -20,13 +24,13 @@ http://jax-ws.dev.java.net/spring/servlet
 		<property name="studentBo" ref="StudentBO" />
 	</bean>
 
-	<bean id="StudentBO" class="com.csc.bo.impl.StudentBoImpl" />
-<!-- 		<property name="studentDao" ref="StudentDao" />
+	<bean id="StudentBO" class="com.csc.bo.impl.StudentBoImpl">
+		<property name="studentDao" ref="StudentDao" />
 	</bean>
 
-	Student Data Access Object
+	<!-- Student Data Access Object -->
 	<bean id="StudentDao" class="com.csc.dao.impl.StudentDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
-	</bean> -->
+	</bean>
 
 </beans>

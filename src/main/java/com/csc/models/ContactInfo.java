@@ -3,7 +3,7 @@ package com.csc.models;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "contactInfo")
+//@XmlRootElement(name = "contactInfo")
 public class ContactInfo {
 
 	private int id;
@@ -23,7 +23,7 @@ public class ContactInfo {
 		return id;
 	}
 
-	@XmlElement
+	//@XmlElement
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -32,7 +32,7 @@ public class ContactInfo {
 		return this.phNo;
 	}
 
-	@XmlElement
+	//@XmlElement
 	public void setPhNo(int phNo) {
 		this.phNo = phNo;
 	}
@@ -41,7 +41,7 @@ public class ContactInfo {
 		return this.email;
 	}
 
-	@XmlElement
+	//@XmlElement
 	public void setEmail(String email) {
 		this.email = email;
 	}
