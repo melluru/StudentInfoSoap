@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ws="http://jax-ws.dev.java.net/spring/core"
+	xmlns:wss="http://jax-ws.dev.java.net/spring/servlet"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://jax-ws.dev.java.net/spring/core
+http://jax-ws.java.net/spring/core.xsd
+http://jax-ws.dev.java.net/spring/servlet
+      http://jax-ws.java.net/spring/servlet.xsd">
+
+	<wss:binding url="/studentInfo">
+		<wss:service>
+			<ws:service bean="#stdSoapRsr" />
+		</wss:service>
+	</wss:binding>
+
+	<!-- Web service methods -->
+	<bean id="stdSoapRsr" class="com.csc.resources.StudentSoapResource">
+		<property name="studentBo" ref="StudentBO" />
+	</bean>
+
+	<bean id="StudentBO" class="com.csc.bo.impl.StudentBoImpl" />
+<!-- 		<property name="studentDao" ref="StudentDao" />
+	</bean>
+
+	Student Data Access Object
+	<bean id="StudentDao" class="com.csc.dao.impl.StudentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean> -->
+
+</beans>
